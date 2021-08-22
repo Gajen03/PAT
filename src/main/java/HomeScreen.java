@@ -1,3 +1,6 @@
+
+import Logins.ChangeLogin;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -531,6 +534,11 @@ public class HomeScreen extends javax.swing.JFrame {
         jButton7.setBackground(new java.awt.Color(102, 102, 102));
         jButton7.setFont(new java.awt.Font("Gill Sans Nova", 0, 12)); // NOI18N
         jButton7.setText("Team Sheet");
+        jButton7.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jButton7StateChanged(evt);
+            }
+        });
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -649,6 +657,11 @@ public class HomeScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void jButton7StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jButton7StateChanged
+     Teams Info = new Teams();
+            Info.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7StateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -682,7 +695,10 @@ public class HomeScreen extends javax.swing.JFrame {
                 new HomeScreen().setVisible(true);
             }
         });
+        Teams Info = new Teams();
+            Info.setVisible(true);
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
