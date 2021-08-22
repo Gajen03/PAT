@@ -76,7 +76,7 @@ public class HomeScreen extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        Teamsheetsbut = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
 
         jButton8.setBackground(new java.awt.Color(0, 0, 102));
@@ -531,17 +531,17 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(102, 102, 102));
-        jButton7.setFont(new java.awt.Font("Gill Sans Nova", 0, 12)); // NOI18N
-        jButton7.setText("Team Sheet");
-        jButton7.addChangeListener(new javax.swing.event.ChangeListener() {
+        Teamsheetsbut.setBackground(new java.awt.Color(102, 102, 102));
+        Teamsheetsbut.setFont(new java.awt.Font("Gill Sans Nova", 0, 12)); // NOI18N
+        Teamsheetsbut.setText("Team Sheet");
+        Teamsheetsbut.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jButton7StateChanged(evt);
+                TeamsheetsbutStateChanged(evt);
             }
         });
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        Teamsheetsbut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                TeamsheetsbutActionPerformed(evt);
             }
         });
 
@@ -570,7 +570,7 @@ public class HomeScreen extends javax.swing.JFrame {
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addGap(94, 94, 94)
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Teamsheetsbut, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addGap(38, 38, 38)
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -581,7 +581,7 @@ public class HomeScreen extends javax.swing.JFrame {
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addGap(66, 66, 66)
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -600,9 +600,9 @@ public class HomeScreen extends javax.swing.JFrame {
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Teamsheetsbut, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -619,7 +619,9 @@ public class HomeScreen extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -649,18 +651,18 @@ public class HomeScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    private void TeamsheetsbutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamsheetsbutActionPerformed
+          Teams Info = new Teams();
+            Info.setVisible(true); 
+    }//GEN-LAST:event_TeamsheetsbutActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton7StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jButton7StateChanged
-     Teams Info = new Teams();
-            Info.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7StateChanged
+    private void TeamsheetsbutStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TeamsheetsbutStateChanged
+            // TODO add your handling code here:
+    }//GEN-LAST:event_TeamsheetsbutStateChanged
 
     /**
      * @param args the command line arguments
@@ -695,18 +697,17 @@ public class HomeScreen extends javax.swing.JFrame {
                 new HomeScreen().setVisible(true);
             }
         });
-        Teams Info = new Teams();
-            Info.setVisible(true);
+        
     }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Teamsheetsbut;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;

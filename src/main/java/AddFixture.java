@@ -39,7 +39,7 @@ public class AddFixture extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jComboBox2 = new javax.swing.JComboBox<>();
         jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        CancelBUt = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
@@ -109,8 +109,18 @@ public class AddFixture extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Cancel");
+        CancelBUt.setForeground(new java.awt.Color(255, 255, 255));
+        CancelBUt.setText("Cancel");
+        CancelBUt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CancelBUtMouseClicked(evt);
+            }
+        });
+        CancelBUt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelBUtActionPerformed(evt);
+            }
+        });
 
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Rest");
@@ -126,7 +136,7 @@ public class AddFixture extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(CancelBUt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2)
                         .addGap(69, 69, 69)
@@ -191,7 +201,7 @@ public class AddFixture extends javax.swing.JFrame {
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(CancelBUt)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
                 .addContainerGap())
@@ -226,6 +236,17 @@ public class AddFixture extends javax.swing.JFrame {
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void CancelBUtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelBUtMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CancelBUtMouseClicked
+
+    private void CancelBUtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBUtActionPerformed
+            HomeScreen Info = new HomeScreen();
+            Info.setVisible(true);        // TODO add your handling code here:
+            
+            dispose();
+    }//GEN-LAST:event_CancelBUtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,7 +284,7 @@ public class AddFixture extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton CancelBUt;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
