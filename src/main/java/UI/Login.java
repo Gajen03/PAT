@@ -5,9 +5,8 @@
  */
 package UI;
 import javax.swing.JOptionPane;
-import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
-import UI.Login_s;
+
 /**
  *
  * @author SWG_T28
@@ -19,6 +18,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -37,12 +37,12 @@ public class Login extends javax.swing.JFrame {
         UserNameInput = new javax.swing.JTextField();
         Enter = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
-        Exit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        Change = new javax.swing.JButton();
+        Reset1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 255));
 
@@ -56,7 +56,9 @@ public class Login extends javax.swing.JFrame {
 
         UserNameInput.setFont(new java.awt.Font("Ebrima", 1, 17)); // NOI18N
 
+        Enter.setBackground(new java.awt.Color(255, 204, 0));
         Enter.setFont(new java.awt.Font("Ebrima", 1, 20)); // NOI18N
+        Enter.setForeground(new java.awt.Color(0, 0, 0));
         Enter.setText("Enter");
         Enter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,7 +66,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        Reset.setBackground(new java.awt.Color(255, 204, 0));
         Reset.setFont(new java.awt.Font("Ebrima", 1, 20)); // NOI18N
+        Reset.setForeground(new java.awt.Color(0, 0, 0));
         Reset.setText("Reset");
         Reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,22 +76,16 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        Exit.setFont(new java.awt.Font("Ebrima", 1, 20)); // NOI18N
-        Exit.setText("Exit");
-        Exit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExitActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Ebrima", 1, 30)); // NOI18N
         jLabel1.setText("L O G I N");
 
-        Change.setFont(new java.awt.Font("Ebrima", 1, 20)); // NOI18N
-        Change.setText("Change Login");
-        Change.addActionListener(new java.awt.event.ActionListener() {
+        Reset1.setBackground(new java.awt.Color(255, 204, 0));
+        Reset1.setFont(new java.awt.Font("Ebrima", 1, 20)); // NOI18N
+        Reset1.setForeground(new java.awt.Color(0, 0, 0));
+        Reset1.setText("Exit");
+        Reset1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ChangeActionPerformed(evt);
+                Reset1ActionPerformed(evt);
             }
         });
 
@@ -97,11 +95,6 @@ public class Login extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Change)
-                        .addGap(18, 18, 18)
-                        .addComponent(Exit))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -122,7 +115,10 @@ public class Login extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(373, 373, 373)
                                 .addComponent(jLabel1)))
-                        .addGap(0, 370, Short.MAX_VALUE)))
+                        .addGap(0, 367, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Reset1)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -142,10 +138,8 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Enter)
                     .addComponent(Reset))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Exit)
-                    .addComponent(Change))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
+                .addComponent(Reset1)
                 .addContainerGap())
         );
 
@@ -155,14 +149,12 @@ public class Login extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -174,12 +166,13 @@ public class Login extends javax.swing.JFrame {
         
        
         
-        if(password.contains("1234")&&(userName.contains("Gajen"))){
+        if(password.contains("1234")&&(userName.contains("Gajen")||userName.contains("Clifton")||userName.contains("JC")||userName.contains("Megan")||userName.contains("Nartia")||userName.contains("Neeraav")||userName.contains("Kyra")||userName.contains("Murray")||userName.contains("Ryan")||userName.contains("Gia")||userName.contains("Karina"))){
             PasswordInput.setText(null);
             UserNameInput.setText(null);
             systemExit();
-            Login_s Info = new Login_s();
+            HomeScreen Info = new HomeScreen();
             Info.setVisible(true);
+            dispose();
         }
         else{
            
@@ -190,10 +183,6 @@ public class Login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_EnterActionPerformed
 
-    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_ExitActionPerformed
-
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
         PasswordInput.setText(null); 
         UserNameInput.setText(null); 
@@ -201,11 +190,10 @@ public class Login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ResetActionPerformed
 
-    private void ChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangeActionPerformed
-          ChangeLogin Info = new ChangeLogin();
-            Info.setVisible(true);
-        
-    }//GEN-LAST:event_ChangeActionPerformed
+    private void Reset1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reset1ActionPerformed
+           
+            dispose();
+    }//GEN-LAST:event_Reset1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,12 +231,11 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Change;
     private javax.swing.JButton Enter;
-    private javax.swing.JButton Exit;
     private javax.swing.JLabel Password;
     private javax.swing.JPasswordField PasswordInput;
     private javax.swing.JButton Reset;
+    private javax.swing.JButton Reset1;
     private javax.swing.JLabel UserName;
     private javax.swing.JTextField UserNameInput;
     private javax.swing.JLabel jLabel1;
