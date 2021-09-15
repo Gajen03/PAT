@@ -7,6 +7,9 @@ package backend;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -53,8 +56,7 @@ public class TeamSheetsGirls {
             Scanner fileSc = new Scanner(f);
 
             while (fileSc.hasNextLine()) {
-                String line = fileSc.next();
-
+              String line = fileSc.next();
                 Scanner lineSc = new Scanner(line).useDelimiter("#");
                 String name = lineSc.next();
                 String surname = lineSc.next();
@@ -73,4 +75,17 @@ public class TeamSheetsGirls {
         }
         return output;
     }
+      public static void addGirls(String name, String surname,String number,String cap){
+        try {
+            FileWriter fw = new FileWriter(subfilepath, true);
+            PrintWriter pw = new PrintWriter(fw);
+//            name = JOptionPane.showInputDialog("Enter Book Name");
+//            author = JOptionPane.showInputDialog("Enter Book Author");
+            pw.print("\n"+name +"#"+ surname+"#"+number+"#"+cap);
+            pw.close();
+        } catch (IOException ex) {
+            System.out.println("File not found");
+            
+        }
+      }
 }

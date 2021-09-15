@@ -66,6 +66,7 @@ public class Stats extends javax.swing.JFrame {
         jScrollPane1.setViewportView(StatsTextArea);
 
         jLabel5.setFont(new java.awt.Font("Eras Demi ITC", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Stats");
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/analysis (1).png"))); // NOI18N
