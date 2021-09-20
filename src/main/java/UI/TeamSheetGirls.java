@@ -175,7 +175,7 @@ public class TeamSheetGirls extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        AddPlayerGirls Info = new AddPlayerGirls();
+        PlayerManagerGirls Info = new PlayerManagerGirls();
         Info.setVisible(true);
         dispose();// TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed

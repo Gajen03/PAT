@@ -88,4 +88,30 @@ public class TeamSheetsGirls {
             
         }
       }
+public static void deleteGirls(String name, String surname,String number,String cap) {
+		try {
+			Scanner sc = new Scanner(new File(subfilepath));
+			String output = "";
+			String playerName = name +"#"+ surname+"#"+number+"#"+cap;
+
+			while (sc.hasNextLine()) {
+				String line = sc.nextLine();
+				if (!line.equalsIgnoreCase(playerName)) {
+					output += line + "\n";
+				
+			
+				}
+			}
+			sc.close();
+                        
+
+			PrintWriter pw = new PrintWriter(new FileWriter(subfilepath, false));
+			pw.print(output);
+			pw.close();
+		} catch (FileNotFoundException ex) {
+			System.out.println("Students file not found");
+		} catch (IOException ex) {
+			System.out.println("Could not delete student");
+		}
+	}
 }
