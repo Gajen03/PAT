@@ -130,10 +130,11 @@ public class TeamSheetsBoys {
 				String line = sc.nextLine();
 				if (!line.equalsIgnoreCase(playerName)) {
 					output += line + "\n";
-				
+			 	
 			
 				}
 			}
+                        
 			sc.close();
                         
 
