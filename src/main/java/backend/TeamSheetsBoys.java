@@ -21,7 +21,7 @@ public class TeamSheetsBoys {
     public static String playerfilepath = "data\\boyTS.txt";
     public static String subfilepath = "data\\subTS.txt";
 
-    public static String getBoysP() {
+     public static String getBoysP() {
         String output = "";
 
         try {
@@ -50,6 +50,45 @@ public class TeamSheetsBoys {
         }
         return output;
     }
+     private static int getNumBoysP() {
+		try {
+			Scanner sc = new Scanner(new File(playerfilepath));
+                                                sc.useDelimiter("#");
+			int count = 0;
+			while (sc.hasNextLine()) {
+				sc.nextLine();
+				count++;
+			}
+			sc.close();
+			return count;
+		} catch (FileNotFoundException ex) {
+			System.out.println("Player file not found");
+			return -1;
+		}
+	}
+     public static String[] getBoysAsArray() {
+		try {
+			Scanner sc = new Scanner(new File(playerfilepath));
+                                               
+			int numboys = getNumBoysP();
+			String[] outputArr = new String[numboys];
+			int currentIndex = 0;
+			while (sc.hasNextLine()) {
+                                                                String line = sc.nextLine();
+                                                                Scanner lineSc = new Scanner(line).useDelimiter("#");
+                                                                String name = lineSc.next();
+                                                                String surname = lineSc.next();
+                                                                
+				outputArr[currentIndex] = name + "" + surname ;
+				currentIndex++;
+			}
+			sc.close();
+			return outputArr;
+		} catch (FileNotFoundException ex) {
+			System.out.println("Player file not found");
+			return null;
+		}
+	}
      public static String getBoysS() {
         String output = "";
 
@@ -94,7 +133,7 @@ public class TeamSheetsBoys {
         
       
      }
-	public static void deleteBoysP(String name, String surname,String number,String cap) {
+     public static void deleteBoysP(String name, String surname,String number,String cap) {
 		try {
 			Scanner sc = new Scanner(new File(playerfilepath));
 			String output = "";
@@ -120,7 +159,7 @@ public class TeamSheetsBoys {
 			System.out.println("Could not delete student");
 		}
 	}
-        public static void deleteBoysS(String name, String surname,String number,String cap){
+     public static void deleteBoysS(String name, String surname,String number,String cap){
             try {
 			Scanner sc = new Scanner(new File(subfilepath));
 			String output = "";

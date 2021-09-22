@@ -5,6 +5,8 @@
  */
 package backend;
 
+import static backend.TeamSheetsBoys.playerfilepath;
+import static backend.TeamSheetsBoys.subfilepath;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -64,7 +66,7 @@ public class TeamSheetsGirls {
                 String cap = lineSc.next();
 
 //                output += "Name: " + name + "\t\t\tSurname: " + surname + "\t\t\t"+"Number: "+number+"\n";
-               output += String.format("Name: %-10s Surname: %-10s  %-15s  %-15s",name,surname,cap,number) + "\n";
+               output += String.format("Name: %-10s Surname: %-15s  %-15s  %-15s",name,surname,cap,number) + "\n";
             }
             
             
@@ -75,6 +77,45 @@ public class TeamSheetsGirls {
         }
         return output;
     }
+     private static int getNumGirlsP() {
+		try {
+			Scanner sc = new Scanner(new File(playerfilepath));
+                                                sc.useDelimiter("#");
+			int count = 0;
+			while (sc.hasNextLine()) {
+				sc.nextLine();
+				count++;
+			}
+			sc.close();
+			return count;
+		} catch (FileNotFoundException ex) {
+			System.out.println("Player file not found");
+			return -1;
+		}
+	}
+     public static String[] getGirlsAsArray() {
+		try {
+			Scanner sc = new Scanner(new File(playerfilepath));
+                                               
+			int numboys = getNumGirlsP();
+			String[] outputArr = new String[numboys];
+			int currentIndex = 0;
+			while (sc.hasNextLine()) {
+                                                                String line = sc.nextLine();
+                                                                Scanner lineSc = new Scanner(line).useDelimiter("#");
+                                                                String name = lineSc.next();
+                                                                String surname = lineSc.next();
+                                                                
+				outputArr[currentIndex] = name + "" + surname ;
+				currentIndex++;
+			}
+			sc.close();
+			return outputArr;
+		} catch (FileNotFoundException ex) {
+			System.out.println("Player file not found");
+			return null;
+		}
+	}
       public static void addGirls(String name, String surname,String number,String cap){
         try {
             FileWriter fw = new FileWriter(subfilepath, true);
@@ -88,9 +129,9 @@ public class TeamSheetsGirls {
             
         }
       }
-public static void deleteGirls(String name, String surname,String number,String cap) {
+public static void deleteGirlsPlayers(String name, String surname,String number,String cap) {
 		try {
-			Scanner sc = new Scanner(new File(subfilepath));
+			Scanner sc = new Scanner(new File(playerfilepath));
 			String output = "";
 			String playerName = name +"#"+ surname+"#"+number+"#"+cap;
 
@@ -105,7 +146,7 @@ public static void deleteGirls(String name, String surname,String number,String 
 			sc.close();
                         
 
-			PrintWriter pw = new PrintWriter(new FileWriter(subfilepath, false));
+			PrintWriter pw = new PrintWriter(new FileWriter(playerfilepath, false));
 			pw.print(output);
 			pw.close();
 		} catch (FileNotFoundException ex) {
@@ -114,4 +155,31 @@ public static void deleteGirls(String name, String surname,String number,String 
 			System.out.println("Could not delete student");
 		}
 	}
+        public static void deleteGirlsSubs(String name, String surname,String number,String cap){
+            try {
+			Scanner sc = new Scanner(new File(subfilepath));
+			String output = "";
+			String playerName = name +"#"+ surname+"#"+number+"#"+cap;
+
+			while (sc.hasNextLine()) {
+				String line = sc.nextLine();
+				if (!line.equalsIgnoreCase(playerName)) {
+					output += line +"\n" ;
+			 	
+			
+				}
+			}
+                        
+			sc.close();
+                        
+
+			PrintWriter pw = new PrintWriter(new FileWriter(subfilepath, false));
+			pw.print(output);
+			pw.close();
+		} catch (FileNotFoundException ex) {
+			System.out.println("Students file not found");
+		} catch (IOException ex) {
+			System.out.println("Could not delete student");
+		}
+        }
 }

@@ -35,7 +35,7 @@ public class Statistics {
                 
 
 
-                output += String.format("Name: %-10s Surname: %-10s  %-20s Number ",name,surname,goalNum) + "\n";
+                output += String.format("Name: %-10s Surname: %-10s  Goals: %-5s  ",name,surname,goalNum) + "\n";
             }
             
             
@@ -63,7 +63,35 @@ public class Statistics {
                 
 
 
-                output += String.format("Name: %-10s Surname: %-10s  %-20s Number ",name,surname,goalNum) + "\n";
+                output += String.format("Name: %-10s Surname: %-10s  Goals: %-5s   ",name,surname,goalNum) + "\n";
+            }
+            
+            
+
+        } catch (FileNotFoundException ex) {
+
+            System.out.println("File Not Found");
+        }
+        return output;
+    }
+    public static String fixtures(){
+        String output = "";
+
+        try {
+            File f = new File(topscorerBfilepath);
+            Scanner fileSc = new Scanner(f);
+
+            while (fileSc.hasNext()) {
+                String line = fileSc.next();
+
+                Scanner lineSc = new Scanner(line).useDelimiter("#");
+                String name = lineSc.next();
+                String surname = lineSc.next();
+                String goalNum = lineSc.next();
+                
+
+
+                output += String.format("Name: %-10s Surname: %-10s  %-15s",name,surname,goalNum) + "\n";
             }
             
             

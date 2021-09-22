@@ -27,7 +27,7 @@ public class HomeScreen extends javax.swing.JFrame {
         String topScorersB = Statistics.topScorers();
         topScoresBTA.setText(topScorersB);
         String topScorersG = Statistics.topScorersG();
-        topScoresBTA.setText(topScorersG);
+        topScoresGTA.setText(topScorersG);
     
     }
 
@@ -66,16 +66,17 @@ public class HomeScreen extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        StatsButton = new javax.swing.JButton();
         Teamsheetsbut = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        ExitButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
+        AddResultButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         topScoresBTA = new javax.swing.JTextArea();
         jLabel34 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        topScoresGTA = new javax.swing.JTextArea();
+        jLabel35 = new javax.swing.JLabel();
 
         jButton8.setBackground(new java.awt.Color(0, 0, 102));
         jButton8.setFont(new java.awt.Font("Gill Sans Nova", 0, 12)); // NOI18N
@@ -319,13 +320,13 @@ public class HomeScreen extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Reddam House Ballito Football App");
 
-        jButton5.setBackground(new java.awt.Color(255, 204, 0));
-        jButton5.setFont(new java.awt.Font("Gill Sans Nova", 0, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("Stats");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        StatsButton.setBackground(new java.awt.Color(255, 204, 0));
+        StatsButton.setFont(new java.awt.Font("Gill Sans Nova", 0, 12)); // NOI18N
+        StatsButton.setForeground(new java.awt.Color(0, 0, 0));
+        StatsButton.setText("Stats");
+        StatsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                StatsButtonActionPerformed(evt);
             }
         });
 
@@ -344,13 +345,13 @@ public class HomeScreen extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(255, 204, 0));
-        jButton6.setFont(new java.awt.Font("Gill Sans Nova", 0, 12)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
-        jButton6.setText("Exit");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        ExitButton.setBackground(new java.awt.Color(255, 204, 0));
+        ExitButton.setFont(new java.awt.Font("Gill Sans Nova", 0, 12)); // NOI18N
+        ExitButton.setForeground(new java.awt.Color(0, 0, 0));
+        ExitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back-button.png"))); // NOI18N
+        ExitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                ExitButtonActionPerformed(evt);
             }
         });
 
@@ -359,90 +360,106 @@ public class HomeScreen extends javax.swing.JFrame {
         jLabel1.setMaximumSize(new java.awt.Dimension(200, 200));
         jLabel1.setMinimumSize(new java.awt.Dimension(200, 200));
 
-        jButton7.setBackground(new java.awt.Color(255, 204, 0));
-        jButton7.setFont(new java.awt.Font("Gill Sans Nova", 0, 12)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(0, 0, 0));
-        jButton7.setText("Add Fixture");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        AddResultButton.setBackground(new java.awt.Color(255, 204, 0));
+        AddResultButton.setFont(new java.awt.Font("Gill Sans Nova", 0, 12)); // NOI18N
+        AddResultButton.setForeground(new java.awt.Color(0, 0, 0));
+        AddResultButton.setText("Results");
+        AddResultButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                AddResultButtonActionPerformed(evt);
             }
         });
 
         topScoresBTA.setBackground(new java.awt.Color(0, 0, 102));
         topScoresBTA.setColumns(20);
+        topScoresBTA.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         topScoresBTA.setForeground(new java.awt.Color(255, 255, 255));
         topScoresBTA.setRows(5);
         jScrollPane1.setViewportView(topScoresBTA);
 
         jLabel34.setFont(new java.awt.Font("Gill Sans Nova", 1, 24)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel34.setText("Top Scorers");
+        jLabel34.setText("Top Boy Scorers");
 
-        jTextArea1.setBackground(new java.awt.Color(0, 0, 102));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
+        topScoresGTA.setBackground(new java.awt.Color(0, 0, 102));
+        topScoresGTA.setColumns(20);
+        topScoresGTA.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        topScoresGTA.setForeground(new java.awt.Color(255, 255, 255));
+        topScoresGTA.setRows(5);
+        jScrollPane3.setViewportView(topScoresGTA);
+
+        jLabel35.setFont(new java.awt.Font("Gill Sans Nova", 1, 24)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("Top Girls Scorers");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel35)
+                .addGap(402, 402, 402))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(Teamsheetsbut, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(297, 297, 297)
+                .addComponent(AddResultButton, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(StatsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70))
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(158, 158, 158)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addContainerGap()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(158, 158, 158)
+                                .addComponent(jLabel2)
+                                .addGap(0, 173, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane1))
-                                .addGap(64, 64, 64))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel34)
-                                .addGap(191, 191, 191)))))
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane1)))))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel34)
+                        .addGap(173, 173, 173)))
+                .addGap(51, 51, 51)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(Teamsheetsbut, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(190, 190, 190)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(218, 218, 218)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(29, 29, 29)
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel35)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Teamsheetsbut, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29))
+                    .addComponent(Teamsheetsbut, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(StatsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddResultButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -478,11 +495,11 @@ public class HomeScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
         Login Info = new Login();
         Info.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_ExitButtonActionPerformed
 
     private void TeamsheetsbutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamsheetsbutActionPerformed
         Teams Info = new Teams();
@@ -494,17 +511,17 @@ public class HomeScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TeamsheetsbutStateChanged
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void StatsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StatsButtonActionPerformed
         Stats Info = new Stats();
         Info.setVisible(true);
         dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_StatsButtonActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       AddFixture Info = new AddFixture();
+    private void AddResultButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddResultButtonActionPerformed
+       Results Info = new Results();
         Info.setVisible(true);
         dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_AddResultButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -544,12 +561,12 @@ public class HomeScreen extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddResultButton;
+    private javax.swing.JButton ExitButton;
+    private javax.swing.JButton StatsButton;
     private javax.swing.JButton Teamsheetsbut;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
@@ -571,14 +588,15 @@ public class HomeScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
     private java.awt.Scrollbar scrollbar1;
     private javax.swing.JTextArea topScoresBTA;
+    private javax.swing.JTextArea topScoresGTA;
     // End of variables declaration//GEN-END:variables
 }

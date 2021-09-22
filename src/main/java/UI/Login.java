@@ -47,9 +47,11 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 153));
 
         UserName.setFont(new java.awt.Font("Ebrima", 1, 20)); // NOI18N
+        UserName.setForeground(new java.awt.Color(255, 255, 255));
         UserName.setText("User Name");
 
         Password.setFont(new java.awt.Font("Ebrima", 1, 20)); // NOI18N
+        Password.setForeground(new java.awt.Color(255, 255, 255));
         Password.setText("Password");
 
         PasswordInput.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
@@ -77,6 +79,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Ebrima", 1, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("L O G I N");
 
         Reset1.setBackground(new java.awt.Color(255, 204, 0));
@@ -110,7 +113,7 @@ public class Login extends javax.swing.JFrame {
                                 .addComponent(Enter)
                                 .addGap(122, 122, 122)
                                 .addComponent(Reset)))
-                        .addGap(0, 367, Short.MAX_VALUE))
+                        .addGap(0, 349, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(Reset1)))
@@ -146,10 +149,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

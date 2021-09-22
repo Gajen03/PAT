@@ -31,41 +31,41 @@ public class Teams extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        BoysTSButton = new javax.swing.JButton();
+        GirlsTSButton = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setPreferredSize(new java.awt.Dimension(1405, 522));
 
-        jLabel1.setFont(new java.awt.Font("Gill Sans Nova", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Gill Sans Nova", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("TEAM SHEETS");
 
-        jButton2.setBackground(new java.awt.Color(255, 204, 0));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/soccer-player (1).png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BoysTSButton.setBackground(new java.awt.Color(255, 204, 0));
+        BoysTSButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/soccer-player (1).png"))); // NOI18N
+        BoysTSButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BoysTSButtonActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 0));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/soccer-player.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        GirlsTSButton.setBackground(new java.awt.Color(255, 204, 0));
+        GirlsTSButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/soccer-player.png"))); // NOI18N
+        GirlsTSButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                GirlsTSButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 204, 51));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Back");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        BackButton.setBackground(new java.awt.Color(255, 204, 51));
+        BackButton.setForeground(new java.awt.Color(0, 0, 0));
+        BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back-button.png"))); // NOI18N
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                BackButtonActionPerformed(evt);
             }
         });
 
@@ -75,15 +75,15 @@ public class Teams extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton3)
-                .addGap(195, 195, 195)
+                .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(181, 181, 181)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(130, 130, 130)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BoysTSButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 292, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(GirlsTSButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(124, 124, 124))
         );
         jPanel1Layout.setVerticalGroup(
@@ -92,14 +92,14 @@ public class Teams extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                        .addComponent(BackButton)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1))
+                    .addComponent(BoysTSButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(GirlsTSButton))
                 .addGap(217, 217, 217))
         );
 
@@ -119,25 +119,25 @@ public class Teams extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void BoysTSButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoysTSButtonActionPerformed
            TeamSheetBoys Info = new TeamSheetBoys();
             Info.setVisible(true); 
           dispose();
 // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_BoysTSButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void GirlsTSButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GirlsTSButtonActionPerformed
           TeamSheetGirls Info = new TeamSheetGirls();
             Info.setVisible(true);  
         dispose();
 // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_GirlsTSButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
             HomeScreen Info = new HomeScreen();
             Info.setVisible(true);    
             dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,9 +175,9 @@ public class Teams extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton BackButton;
+    private javax.swing.JButton BoysTSButton;
+    private javax.swing.JButton GirlsTSButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
