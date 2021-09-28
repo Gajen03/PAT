@@ -19,7 +19,7 @@ public class TeamSheetGirls extends javax.swing.JFrame {
      */
     public TeamSheetGirls() {
         initComponents();
-    setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
         String players = TeamSheetsGirls.getGirlsP();
         teamsheetsGirlsTextArea.setText(players);
         String subs = TeamSheetsGirls.getGirlsS();
@@ -270,9 +270,8 @@ public class TeamSheetGirls extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel23)
-                        .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel23)
                     .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)

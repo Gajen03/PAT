@@ -74,10 +74,11 @@ public class TeamSheetsBoys {
 			String[] outputArr = new String[numboys];
 			int currentIndex = 0;
 			while (sc.hasNextLine()) {
-                                                                String line = sc.nextLine();
-                                                                Scanner lineSc = new Scanner(line).useDelimiter("#");
-                                                                String name = lineSc.next();
-                                                                String surname = lineSc.next();
+                            
+                                String line = sc.nextLine();
+                                Scanner lineSc = new Scanner(line).useDelimiter("#");
+                                String name = lineSc.next();
+                                String surname = lineSc.next();
                                                                 
 				outputArr[currentIndex] = name + "" + surname ;
 				currentIndex++;

@@ -4,7 +4,7 @@ import backend.ResultsBackend;
  import javax.swing.*;
 import backend.TeamSheetsBoys;
 import backend.TeamSheetsGirls;
-import javafx.scene.control.Spinner;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;

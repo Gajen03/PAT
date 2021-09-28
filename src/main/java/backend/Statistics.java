@@ -18,6 +18,8 @@ public class Statistics {
     
     public static String topscorerBfilepath = "data\\topscoresboys.txt";
     public static String topscorerGfilepath = "data\\topscoresgirls.txt";
+    public static String boyssquadfilepath = "data\\statsBoys.txt";
+    public static String girlssquadfilepath = "data\\statsGirls.txt";
     public static String topScorers() {
         String output = "";
 
@@ -102,5 +104,63 @@ public class Statistics {
         }
         return output;
     }
- }
+ public static String getBoysStats() {
+        String output = "";
+
+        try {
+            File f = new File(boyssquadfilepath);
+            Scanner fileSc = new Scanner(f);
+
+            while (fileSc.hasNext()) {
+                String line = fileSc.next();
+
+                Scanner lineSc = new Scanner(line).useDelimiter("#");
+                String name = lineSc.next();
+                String surname = lineSc.next();
+                String position = lineSc.next();
+                String goals = lineSc.next();
+                String rating = lineSc.next();
+
+
+                output += String.format("Name: %-10s Surname: %-45s  %-15s %-15s %-15s",name,surname,position,goals,rating) + "\n";
+            }
+            
+            
+
+        } catch (FileNotFoundException ex) {
+
+            System.out.println("File Not Found");
+        }
+        return output;
+    } 
+public static String getGirlsStats() {
+        String output = "";
+
+        try {
+            File f = new File(girlssquadfilepath);
+            Scanner fileSc = new Scanner(f);
+
+            while (fileSc.hasNext()) {
+                String line = fileSc.next();
+
+                Scanner lineSc = new Scanner(line).useDelimiter("#");
+                String name = lineSc.next();
+                String surname = lineSc.next();
+                String position = lineSc.next();
+                String goals = lineSc.next();
+                String rating = lineSc.next();
+
+
+                output += String.format("Name: %-10s Surname: %-45s  %-15s %-15s %-15s",name,surname,position,goals,rating) + "\n";
+            }
+            
+            
+
+        } catch (FileNotFoundException ex) {
+
+            System.out.println("File Not Found");
+        }
+        return output;
+    } 
+}
 

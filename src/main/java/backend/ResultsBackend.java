@@ -24,7 +24,7 @@ public class ResultsBackend {
         try {
             FileWriter fw = new FileWriter(resultfilepath, true);
             PrintWriter pw = new PrintWriter(fw);
-            pw.println(RHBTeam +"#"+ RHBScore+"#"+vs+"#"+OpponentScore+"#"+OtherTeam+"#"+location+"#"+player1+"#"+player2+"#"+player3+"#"+player4+"#"+player5);
+            pw.println(RHBTeam +"#"+ RHBScore+"#"+vs+"#"+OpponentScore+"#"+OtherTeam+"#"+location+"#"+player1+"#"+player2+"#"+player3+"#"+player4+"#"+player5+"#");
             pw.close();
         } catch (IOException ex) {
             System.out.println("File not found");
@@ -61,7 +61,7 @@ public class ResultsBackend {
                 
 
 
-                output += String.format("%-10s %-10s %-10s %-10s  %-10s\n\n Location: %-15s\n\n%-10s \n%-10s\n%-10s\n%-10s\n%-10s ",RHBteam,RHBScore,vs,OpponentScore,OtherTeam,location,player1,player2,player3,player4,player5)+ "\n";
+             output += String.format("%-10s %-10s %-10s %-10s  %-10s\n\nLocation: %-15s\n\n%-10s \n%-10s\n%-10s\n%-10s\n%-10s\n\n\n ",RHBteam,RHBScore,vs,OpponentScore,OtherTeam,location,player1,player2,player3,player4,player5)+ "\n";
             }
             
             

@@ -1,2 +1,4 @@
 RHBBoys#5#vs#1#CrawfordNorthCoast#Home#RyanGriffiths#RyanGriffiths#SiaenNaicker#ShilodaCoasta#SambuloGumede
-RHBGirls#2#vs#0#RHU#Away#BrooklynRedman#MeganLoud###
+RHBGirls#2#vs#0#RHU#Away#BrooklynRedman#MeganLoud####
+RHBBoys#0#vs#6#CrawfordNorthCoast#Home######
+RHBBoys#0#vs#3#CrawfordNorthCoast#Away######
