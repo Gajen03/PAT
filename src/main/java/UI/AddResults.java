@@ -1,6 +1,7 @@
 package UI;
 
 import backend.ResultsBackend;
+import backend.Statistics;
  import javax.swing.*;
 import backend.TeamSheetsBoys;
 import backend.TeamSheetsGirls;
@@ -159,6 +160,11 @@ public class AddResults extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/resume.png"))); // NOI18N
 
+        Score.setFont(new java.awt.Font("Gill Sans Nova", 1, 12)); // NOI18N
+        Score.setModel(new javax.swing.SpinnerNumberModel(0, 0, 30, 1));
+
+        ScoreRHB.setFont(new java.awt.Font("Gill Sans Nova", 1, 12)); // NOI18N
+        ScoreRHB.setModel(new javax.swing.SpinnerNumberModel(0, 0, 30, 1));
         ScoreRHB.setMaximumSize(new java.awt.Dimension(30, 0));
         ScoreRHB.setMinimumSize(new java.awt.Dimension(0, 0));
         ScoreRHB.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -407,7 +413,7 @@ public class AddResults extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelBUtMouseClicked
 
     private void CancelBUtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelBUtActionPerformed
-        HomeScreen Info = new HomeScreen();
+        Results Info = new Results();
         Info.setVisible(true);        // TODO add your handling code here:
 
         dispose();
@@ -470,6 +476,8 @@ public class AddResults extends javax.swing.JFrame {
         Player5ComboBox.setModel(comboModel5);        // TODO add your handling code here:
 
                                          // TODO add your handling code here:
+                                         
+       
     }//GEN-LAST:event_reddamTeamPickerItemStateChanged
 
     private void ScoreRHBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ScoreRHBMouseClicked
@@ -482,16 +490,23 @@ public class AddResults extends javax.swing.JFrame {
     String rhbTeam = (String)reddamTeamPicker.getSelectedItem();        // TODO add your handling code here:
     String otherTeam = (String)teamPicker.getSelectedItem();        // TODO add your handling code here:
     String Location = (String)location.getSelectedItem();        // TODO add your handling code here:
-    String player1 = (String)Player1ComboBox.getSelectedItem();        // TODO add your handling code here:
-    String player2 = (String)Player2ComboBox.getSelectedItem();        // TODO add your handling code here:
-    String player3 = (String)Player3ComboBox.getSelectedItem();        // TODO add your handling code here:
-    String player4 = (String)Player4ComboBox.getSelectedItem();        // TODO add your handling code here:
-    String player5 = (String)Player5ComboBox.getSelectedItem();        // TODO add your handling code here:
+    String player1 = (String)Player1ComboBox.getSelectedItem();    
+     Statistics.editBoysStats(player1, player1);
+// TODO add your handling code here:
+    String player2 = (String)Player2ComboBox.getSelectedItem(); 
+    Statistics.editBoysStats(player2, player2);// TODO add your handling code here:
+    String player3 = (String)Player3ComboBox.getSelectedItem(); 
+    Statistics.editBoysStats(player3, player3);// TODO add your handling code here:
+    String player4 = (String)Player4ComboBox.getSelectedItem(); 
+    Statistics.editBoysStats(player4, player4);// TODO add your handling code here:
+    String player5 = (String)Player5ComboBox.getSelectedItem();  
+    Statistics.editBoysStats(player5, player5);// TODO add your handling code here:
     int reddamScore = (int) ScoreRHB.getValue();        // TODO add your handling code here:
     int opponentScore = (int)Score.getValue();   
     
     ResultsBackend.addResult("vs",player1, player2, player3, player4, player5, rhbTeam, otherTeam, reddamScore, opponentScore, Location);
 // TODO add your handling code here:
+     
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

@@ -6,8 +6,12 @@
 package backend;
 
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -20,6 +24,7 @@ public class Statistics {
     public static String topscorerGfilepath = "data\\topscoresgirls.txt";
     public static String boyssquadfilepath = "data\\statsBoys.txt";
     public static String girlssquadfilepath = "data\\statsGirls.txt";
+    
     public static String topScorers() {
         String output = "";
 
@@ -104,7 +109,7 @@ public class Statistics {
         }
         return output;
     }
- public static String getBoysStats() {
+    public static String getBoysStats() {
         String output = "";
 
         try {
@@ -133,7 +138,7 @@ public class Statistics {
         }
         return output;
     } 
-public static String getGirlsStats() {
+    public static String getGirlsStats() {
         String output = "";
 
         try {
@@ -162,5 +167,45 @@ public static String getGirlsStats() {
         }
         return output;
     } 
+    public static void editBoysStats(String name,String nameCheck) {
+	String tempfile = "temp.txt";	
+        File oldfile = new File(boyssquadfilepath);
+        File newfile = new File(tempfile);
+        try {
+              
+             FileWriter fw = new FileWriter(tempfile,true);
+             PrintWriter pw  = new PrintWriter(fw);
+             Scanner sc = new Scanner(new File(boyssquadfilepath)).useDelimiter("#");
+		
+             while(sc.hasNext()){
+                name = sc.next();
+                String surname = sc.next();
+                String position = sc.next();
+                String goals = sc.next();
+                String rating = sc.next();
+                
+                if(name.equals(name)){
+                    pw.println(name+"#"+surname+"#"+goals+1+"#"+rating+0.5);
+                }else{
+                    pw.println(name+"#"+surname+"#"+goals+"#"+rating);
+                }
+             }
+             
+      
+             
+             
+             sc.close();
+             pw.flush();
+             pw.close();
+             oldfile.delete();
+             File dump = new File(boyssquadfilepath);
+             newfile.renameTo(dump);
+        
+        } catch (FileNotFoundException ex) {
+		System.out.println("Students file not found");
+		} catch (IOException ex) {
+			System.out.println("Could not delete student");
+		}
+	}
 }
 

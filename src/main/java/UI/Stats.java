@@ -160,7 +160,7 @@ public class Stats extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      Teams Info = new Teams();
+      HomeScreen Info = new HomeScreen();
             Info.setVisible(true);
             dispose();
 // TODO add your handling code here:

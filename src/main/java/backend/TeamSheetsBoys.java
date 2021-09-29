@@ -20,6 +20,7 @@ public class TeamSheetsBoys {
     
     public static String playerfilepath = "data\\boyTS.txt";
     public static String subfilepath = "data\\subTS.txt";
+    public static String boyssquadfilepath = "data\\statsBoys.txt";
 
      public static String getBoysP() {
         String output = "";
@@ -52,8 +53,8 @@ public class TeamSheetsBoys {
     }
      private static int getNumBoysP() {
 		try {
-			Scanner sc = new Scanner(new File(playerfilepath));
-                                                sc.useDelimiter("#");
+			Scanner sc = new Scanner(new File(boyssquadfilepath));
+                        sc.useDelimiter("#");
 			int count = 0;
 			while (sc.hasNextLine()) {
 				sc.nextLine();
@@ -68,7 +69,7 @@ public class TeamSheetsBoys {
 	}
      public static String[] getBoysAsArray() {
 		try {
-			Scanner sc = new Scanner(new File(playerfilepath));
+			Scanner sc = new Scanner(new File(boyssquadfilepath));
                                                
 			int numboys = getNumBoysP();
 			String[] outputArr = new String[numboys];
@@ -80,7 +81,7 @@ public class TeamSheetsBoys {
                                 String name = lineSc.next();
                                 String surname = lineSc.next();
                                                                 
-				outputArr[currentIndex] = name + "" + surname ;
+				outputArr[currentIndex] = name + " " + surname ;
 				currentIndex++;
 			}
 			sc.close();
