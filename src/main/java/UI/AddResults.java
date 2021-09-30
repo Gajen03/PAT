@@ -491,16 +491,16 @@ public class AddResults extends javax.swing.JFrame {
     String otherTeam = (String)teamPicker.getSelectedItem();        // TODO add your handling code here:
     String Location = (String)location.getSelectedItem();        // TODO add your handling code here:
     String player1 = (String)Player1ComboBox.getSelectedItem();    
-     Statistics.editBoysStats(player1, player1);
+  
 // TODO add your handling code here:
     String player2 = (String)Player2ComboBox.getSelectedItem(); 
-    Statistics.editBoysStats(player2, player2);// TODO add your handling code here:
+   
     String player3 = (String)Player3ComboBox.getSelectedItem(); 
-    Statistics.editBoysStats(player3, player3);// TODO add your handling code here:
+    // TODO add your handling code here:
     String player4 = (String)Player4ComboBox.getSelectedItem(); 
-    Statistics.editBoysStats(player4, player4);// TODO add your handling code here:
+    // TODO add your handling code here:
     String player5 = (String)Player5ComboBox.getSelectedItem();  
-    Statistics.editBoysStats(player5, player5);// TODO add your handling code here:
+    // TODO add your handling code here:
     int reddamScore = (int) ScoreRHB.getValue();        // TODO add your handling code here:
     int opponentScore = (int)Score.getValue();   
     

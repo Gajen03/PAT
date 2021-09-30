@@ -81,7 +81,7 @@ public class TeamSheetsBoys {
                                 String name = lineSc.next();
                                 String surname = lineSc.next();
                                                                 
-				outputArr[currentIndex] = name + " " + surname ;
+				outputArr[currentIndex] = name + "" + surname ;
 				currentIndex++;
 			}
 			sc.close();
