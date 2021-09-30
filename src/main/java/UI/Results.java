@@ -25,7 +25,7 @@ public class Results extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
-        String results = ResultsBackend.getResults();
+        String results = ResultsBackend.getResultsB();
         ResultsTextArea.setText(results);
     }
 
@@ -59,7 +59,7 @@ public class Results extends javax.swing.JFrame {
 
         ResultsTextArea.setBackground(new java.awt.Color(0, 0, 153));
         ResultsTextArea.setColumns(20);
-        ResultsTextArea.setFont(new java.awt.Font("Gill Sans Nova", 1, 12)); // NOI18N
+        ResultsTextArea.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         ResultsTextArea.setForeground(new java.awt.Color(255, 255, 255));
         ResultsTextArea.setRows(5);
         jScrollPane1.setViewportView(ResultsTextArea);

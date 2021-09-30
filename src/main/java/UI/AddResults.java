@@ -5,6 +5,7 @@ import backend.Statistics;
  import javax.swing.*;
 import backend.TeamSheetsBoys;
 import backend.TeamSheetsGirls;
+import java.util.Scanner;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
@@ -40,6 +41,7 @@ public class AddResults extends javax.swing.JFrame {
         comboModel3.addElement("");
         comboModel4.addElement("");
         comboModel5.addElement("");
+        
         String[] players = TeamSheetsGirls.getGirlsAsArray();
         for (int i = 0; i < players.length; i++) {
             comboModel1.addElement(players[i]);
@@ -424,7 +426,7 @@ public class AddResults extends javax.swing.JFrame {
     }//GEN-LAST:event_locationActionPerformed
 
     private void reddamTeamPickerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reddamTeamPickerActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_reddamTeamPickerActionPerformed
 
     private void Player1ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Player1ComboBoxActionPerformed
@@ -489,23 +491,104 @@ public class AddResults extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
     String rhbTeam = (String)reddamTeamPicker.getSelectedItem();        // TODO add your handling code here:
     String otherTeam = (String)teamPicker.getSelectedItem();        // TODO add your handling code here:
-    String Location = (String)location.getSelectedItem();        // TODO add your handling code here:
+    String Location = (String)location.getSelectedItem();
+    Scanner nameSc;// TODO add your handling code here:
     String player1 = (String)Player1ComboBox.getSelectedItem();    
-  
+    String player1Name = "";
+    String player1Surname= "";
+    if(!(player1.isEmpty())){
+         nameSc = new Scanner(player1);
+     player1Name = nameSc.next();
+    player1Surname = nameSc.next();
+    Statistics.addBoyStats(player1Name, player1Surname);
+    if(rhbTeam.equals("RHBGirls")){
+        nameSc = new Scanner(player1);
+     player1Name = nameSc.next();
+    player1Surname = nameSc.next();
+    Statistics.addGirlStats(player1, player1);
+    }
+    }
+    
+            
 // TODO add your handling code here:
     String player2 = (String)Player2ComboBox.getSelectedItem(); 
+   String player2Name= "";
+    String player2Surname= "";
+    if(!(player2.isEmpty())){
+         nameSc = new Scanner(player2);
+    player2Name = nameSc.next();
+    player2Surname = nameSc.next();
+    Statistics.addBoyStats(player2Name, player2Surname);
+     if(rhbTeam.equals("RHBGirls")){
+        nameSc = new Scanner(player2);
+     player2Name = nameSc.next();
+    player2Surname = nameSc.next();
+    Statistics.addGirlStats(player2, player2);
+    }
+    }
+    
    
+    
+    
     String player3 = (String)Player3ComboBox.getSelectedItem(); 
+    String player3Name = "";
+    String player3Surname = "";
+    if(!(player3.isEmpty())){
+         nameSc = new Scanner(player3);
+     player3Name = nameSc.next();
+     player3Surname = nameSc.next();
+    Statistics.addBoyStats(player3Name, player3Surname);
+     if(rhbTeam.equals("RHBGirls")){
+        nameSc = new Scanner(player3);
+     player3Name = nameSc.next();
+    player3Surname = nameSc.next();
+    Statistics.addGirlStats(player3, player3);
+     
+    }
+    }
+    
     // TODO add your handling code here:
+    
     String player4 = (String)Player4ComboBox.getSelectedItem(); 
+    String player4Name= "";
+    String player4Surname= "";
+    if(!(player4.isEmpty())){
+         nameSc = new Scanner(player4);
+     player4Name = nameSc.next();
+     player4Surname = nameSc.next();
+    Statistics.addBoyStats(player4Name, player4Surname);
+     if(rhbTeam.equals("RHBGirls")){
+        nameSc = new Scanner(player4);
+     player4Name = nameSc.next();
+    player4Surname = nameSc.next();
+    Statistics.addGirlStats(player4, player4);
+    }
+    }
+    
     // TODO add your handling code here:
     String player5 = (String)Player5ComboBox.getSelectedItem();  
+    String player5Name= "";
+    String player5Surname= "";
+    if(!(player5.isEmpty())){
+         nameSc = new Scanner(player5);
+     player5Name = nameSc.next();
+     player5Surname = nameSc.next();
+    Statistics.addBoyStats(player5Name, player5Surname);
+    
+    if(rhbTeam.equals("RHBGirls")){
+        nameSc = new Scanner(player5);
+     player5Name = nameSc.next();
+    player5Surname = nameSc.next();
+    Statistics.addGirlStats(player5, player5);
+    }
+    }
+     
+    
     // TODO add your handling code here:
     int reddamScore = (int) ScoreRHB.getValue();        // TODO add your handling code here:
     int opponentScore = (int)Score.getValue();   
     
-    ResultsBackend.addResult("vs",player1, player2, player3, player4, player5, rhbTeam, otherTeam, reddamScore, opponentScore, Location);
-// TODO add your handling code here:
+    ResultsBackend.addResult("vs", player1Name, player1Surname, player2Name, player2Surname, player3Name, player3Surname, player4Name, player4Surname, player5Name, player5Surname, rhbTeam, otherTeam, reddamScore, opponentScore, Location);
      
     }//GEN-LAST:event_jButton3ActionPerformed
 

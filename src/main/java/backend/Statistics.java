@@ -108,6 +108,9 @@ public class Statistics {
         }
         return output;
     }
+    
+    
+    
     public static String getBoysStats() {
         String output = "";
 
@@ -167,7 +170,81 @@ public class Statistics {
         return output;
     } 
    
-   
-	
+   public static void addBoyStats(String nameIn,String surnameIn) {
+        String output = "";
+
+        try {
+            File f = new File(girlssquadfilepath);
+            Scanner fileSc = new Scanner(f);
+
+            while (fileSc.hasNext()) {
+                String line = fileSc.next();
+
+                Scanner lineSc = new Scanner(line).useDelimiter("#");
+                
+                String name = lineSc.next();
+                String surname = lineSc.next();
+                String position = lineSc.next();
+                String goals = lineSc.next();
+                String rating = lineSc.next();
+
+                if(name.equals(nameIn) && surname.equals(surnameIn)){
+                    int newGoals = Integer.parseInt(goals) + 1;
+                    double newRating = Double.parseDouble(rating)+0.5;
+                    
+                    output += name + "#" + surname + "#" + position+"#"+newGoals+"#"+newRating+"\n";
+                }else{
+                    output += name + "#" + surname + "#" + position+"#"+goals+"#"+rating+"\n";
+                }
+            }
+            
+           PrintWriter pw = new PrintWriter(f);
+            pw.println(output.trim());
+            pw.close();
+
+        } catch (FileNotFoundException ex) {
+
+            System.out.println("File Not Found");
+        }
+       
+    } 
+    public static void addGirlStats(String nameIn,String surnameIn) {
+        String output = "";
+
+        try {
+            File f = new File(girlssquadfilepath);
+            Scanner fileSc = new Scanner(f);
+
+            while (fileSc.hasNext()) {
+                String line = fileSc.next();
+
+                Scanner lineSc = new Scanner(line).useDelimiter("#");
+                
+                String name = lineSc.next();
+                String surname = lineSc.next();
+                String position = lineSc.next();
+                String goals = lineSc.next();
+                String rating = lineSc.next();
+
+                if(name.equals(nameIn) && surname.equals(surnameIn)){
+                    int newGoals = Integer.parseInt(goals) + 1;
+                    double newRating = Double.parseDouble(rating)+ 0.5;
+                    
+                    output += name + "#" + surname + "#" + position+"#"+newGoals+"#"+newRating+"\n";
+                }else{
+                    output += name + "#" + surname + "#" + position+"#"+goals+"#"+rating+"\n";
+                }
+            }
+            
+           PrintWriter pw = new PrintWriter(f);
+            pw.println(output.trim());
+            pw.close();
+
+        } catch (FileNotFoundException ex) {
+
+            System.out.println("File Not Found");
+        }
+       
+    } 	
 }
 

@@ -1,6 +1,3 @@
-RHBBoys#5#vs#1#CrawfordNorthCoast#Home#RyanGriffiths#RyanGriffiths#SiaenNaicker#ShilodaCoasta#SambuloGumede
-RHBGirls#2#vs#0#RHU#Away#BrooklynRedman#MeganLoud####
-RHBBoys#0#vs#6#CrawfordNorthCoast#Home######
-RHBBoys#0#vs#3#CrawfordNorthCoast#Away######
+RHBBoys#5#vs#1#CrawfordNorthCoast#Home#Ryan#Griffiths#Ryan#Griffiths#Shilo#daCoasta#Sambulo#Gumede#Siaen#Naicker#
 
-RHBBoys#1#vs#2#CurroMountRichmore#Home#RyanGriffiths#####
+RHBGirls#2#vs#0#RHU#Away#Brooklyn#Redman#Megan#Loud#######

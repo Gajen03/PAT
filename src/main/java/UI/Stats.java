@@ -67,6 +67,7 @@ public class Stats extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Eras Demi ITC", 1, 14)); // NOI18N
 
+        StatsTextArea.setEditable(false);
         StatsTextArea.setBackground(new java.awt.Color(0, 0, 153));
         StatsTextArea.setColumns(20);
         StatsTextArea.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
@@ -87,6 +88,7 @@ public class Stats extends javax.swing.JFrame {
             }
         });
 
+        StatsGTextArea.setEditable(false);
         StatsGTextArea.setBackground(new java.awt.Color(0, 0, 153));
         StatsGTextArea.setColumns(20);
         StatsGTextArea.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
@@ -151,9 +153,7 @@ public class Stats extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)
         );
 
         pack();

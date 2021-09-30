@@ -81,7 +81,7 @@ public class TeamSheetsBoys {
                                 String name = lineSc.next();
                                 String surname = lineSc.next();
                                                                 
-				outputArr[currentIndex] = name + "" + surname ;
+				outputArr[currentIndex] = name + " " + surname ;
 				currentIndex++;
 			}
 			sc.close();
@@ -123,8 +123,6 @@ public class TeamSheetsBoys {
         try {
             FileWriter fw = new FileWriter(subfilepath, true);
             PrintWriter pw = new PrintWriter(fw);
-//            name = JOptionPane.showInputDialog("Enter Book Name");
-//            author = JOptionPane.showInputDialog("Enter Book Author");
             pw.println(name +"#"+ surname+"#"+number+"#"+cap);
             pw.close();
         } catch (IOException ex) {
