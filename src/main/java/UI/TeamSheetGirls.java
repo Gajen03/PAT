@@ -57,6 +57,8 @@ public class TeamSheetGirls extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         AddButton = new javax.swing.JButton();
         DeleteButton = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        positionField = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -176,38 +178,52 @@ public class TeamSheetGirls extends javax.swing.JFrame {
             }
         });
 
+        jLabel11.setFont(new java.awt.Font("Gill Sans MT", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Player Postion");
+
+        positionField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ST", "RM", "LM", "CM", "CB", "RB", "LB", "GK" }));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(124, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(surnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(numberField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(61, 61, 61))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(DeleteButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(AddButton)
-                        .addContainerGap())))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(surnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(numberField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel11)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                                    .addComponent(positionField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(61, 61, 61))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(DeleteButton)
+                            .addGap(18, 18, 18)
+                            .addComponent(AddButton)
+                            .addContainerGap()))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(81, 81, 81)
-                            .addComponent(jLabel8))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(26, 26, 26)))
-                        .addComponent(jLabel4))
-                    .addContainerGap(83, Short.MAX_VALUE)))
+                            .addComponent(jLabel7)
+                            .addContainerGap(279, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addGap(81, 81, 81)
+                                    .addComponent(jLabel8))
+                                .addComponent(jLabel4))
+                            .addContainerGap(83, Short.MAX_VALUE)))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,9 +232,15 @@ public class TeamSheetGirls extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(87, 87, 87)
-                        .addComponent(surnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(105, 105, 105))
+                        .addGap(46, 46, 46)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(surnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(positionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(75, 75, 75))
                     .addComponent(numberField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -231,9 +253,7 @@ public class TeamSheetGirls extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addGap(60, 60, 60)
                     .addComponent(jLabel7)
-                    .addGap(92, 92, 92)
-                    .addComponent(jLabel6)
-                    .addGap(81, 81, 81)
+                    .addGap(195, 195, 195)
                     .addComponent(jLabel4)
                     .addContainerGap(35, Short.MAX_VALUE)))
         );
@@ -323,8 +343,9 @@ public class TeamSheetGirls extends javax.swing.JFrame {
         String name = nameField.getText();  // TODO add your handling code here:
         String surname = surnameField.getText();  // TODO add your handling code here:
         String number = numberField.getText();
+        String position = (String)positionField.getSelectedItem();
         TeamSheetsGirls.addGirls(name, surname, number, ".");
-        
+        TeamSheetsGirls.addGirlsToStats(name, surname, position);
          String players = TeamSheetsGirls.getGirlsP();
         teamsheetsGirlsTextArea.setText(players);
         String subs = TeamSheetsGirls.getGirlsS();
@@ -335,9 +356,10 @@ public class TeamSheetGirls extends javax.swing.JFrame {
            String name = nameField.getText();  // TODO add your handling code here:
           String surname = surnameField.getText();  // TODO add your handling code here:
           String number = numberField.getText();
+          String position = (String)positionField.getSelectedItem();
           TeamSheetsGirls.deleteGirlsPlayers(name, surname, number,".");// TODO add your handling code here:
           TeamSheetsGirls.deleteGirlsSubs(name, surname, number,".");/// TODO add your handling code here:
-          
+          TeamSheetsGirls.deleteGirlsStats(name, surname, position);
            String players = TeamSheetsGirls.getGirlsP();
         teamsheetsGirlsTextArea.setText(players);
         String subs = TeamSheetsGirls.getGirlsS();
@@ -384,6 +406,7 @@ public class TeamSheetGirls extends javax.swing.JFrame {
     private javax.swing.JButton BackButton;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
@@ -398,6 +421,7 @@ public class TeamSheetGirls extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField nameField;
     private javax.swing.JTextField numberField;
+    private javax.swing.JComboBox<String> positionField;
     private javax.swing.JTextField surnameField;
     private javax.swing.JTextArea teamsheetsGirlsSubsTextArea;
     private javax.swing.JTextArea teamsheetsGirlsTextArea;

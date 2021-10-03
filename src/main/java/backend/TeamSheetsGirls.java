@@ -5,6 +5,7 @@
  */
 package backend;
 
+import static backend.TeamSheetsBoys.boyssquadfilepath;
 import static backend.TeamSheetsBoys.playerfilepath;
 import static backend.TeamSheetsBoys.subfilepath;
 import java.io.File;
@@ -22,6 +23,7 @@ public class TeamSheetsGirls {
     
     public static String playerfilepath = "data\\girlTS.txt";
     public static String subfilepath = "data\\subGTS.txt";
+    public static String girlssquadfilepath = "data\\statsGirls.txt";
     public static String getGirlsP() {
         String output = "";
 
@@ -56,18 +58,22 @@ public class TeamSheetsGirls {
         try {
             File f = new File(subfilepath);
             Scanner fileSc = new Scanner(f);
-
+            
             while (fileSc.hasNextLine()) {
-              String line = fileSc.next();
+                String line = fileSc.next();
                 Scanner lineSc = new Scanner(line).useDelimiter("#");
                 String name = lineSc.next();
                 String surname = lineSc.next();
                 String number = lineSc.next();
                 String cap = lineSc.next();
 
-//                output += "Name: " + name + "\t\t\tSurname: " + surname + "\t\t\t"+"Number: "+number+"\n";
-               output += String.format("Name: %-10s Surname: %-15s  %-15s  %-15s",name,surname,cap,number) + "\n";
+
+                
+                output += String.format("Name: %-10s Surname: %-15s  %-15s  %-15s",name,surname,cap,number) + "\n";
+            
             }
+            
+            
             
             
 
@@ -77,7 +83,9 @@ public class TeamSheetsGirls {
         }
         return output;
     }
-     private static int getNumGirlsP() {
+     private static int getNumGirlsP() 
+     
+    {
 		try {
 			Scanner sc = new Scanner(new File(playerfilepath));
                                                 sc.useDelimiter("#");
@@ -160,6 +168,8 @@ public static void deleteGirlsPlayers(String name, String surname,String number,
 			Scanner sc = new Scanner(new File(subfilepath));
 			String output = "";
 			String playerName = name +"#"+ surname+"#"+number+"#"+cap;
+                        
+                        
 
 			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
@@ -176,10 +186,51 @@ public static void deleteGirlsPlayers(String name, String surname,String number,
 			PrintWriter pw = new PrintWriter(new FileWriter(subfilepath, false));
 			pw.print(output);
 			pw.close();
+                        
 		} catch (FileNotFoundException ex) {
 			System.out.println("Students file not found");
 		} catch (IOException ex) {
 			System.out.println("Could not delete student");
 		}
         }
+ public static void addGirlsToStats(String name, String surname,String poistion){
+        try {
+            FileWriter fw = new FileWriter(girlssquadfilepath, true);
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println(name +"#"+ surname+"#"+poistion+"#"+"0"+"#"+"5.0");
+            pw.close();
+        } catch (IOException ex) {
+            System.out.println("File not found");
+            
+        }
+
+
+ }
+public static void deleteGirlsStats(String name, String surname,String poistion) {
+		try {
+			Scanner sc = new Scanner(new File(girlssquadfilepath));
+			String output = "";
+			String playerName = name +"#"+ surname+"#"+poistion+"#"+"0"+"#"+"5.0";
+
+			while (sc.hasNextLine()) {
+				String line = sc.nextLine();
+				if (!line.equalsIgnoreCase(playerName)) {
+					output += line + "\n";
+				
+			
+				}
+			}
+			sc.close();
+                        
+
+			PrintWriter pw = new PrintWriter(new FileWriter(girlssquadfilepath, false));
+			pw.print(output);
+			pw.close();
+		} catch (FileNotFoundException ex) {
+			System.out.println("Students file not found");
+		} catch (IOException ex) {
+			System.out.println("Could not delete student");
+		}
+	}
+
 }

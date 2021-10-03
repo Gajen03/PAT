@@ -1,4 +1,4 @@
-Ryan#Griffiths#ST#2#8.0
+Ryan#Griffiths#ST#3#8.5
 JC#Jacobs#GK#0#7.0
 Jordache#Frances#RB#0#7.0
 Aadi#Naidoo#CB#0#7.0
@@ -10,7 +10,7 @@ Siaen#Naicker#CM#1#7.5
 Sambulo#Gumede#CM#1#7.5
 Luyanda#Zikalala#RM#0#7.0
 Murray#Yoko#ST#0#6.5
-Liwa#Mathebula#CM##6.5
+Liwa#Mathebula#CM#1#6.5
 Neeraav#Ranjit#CM#0#6.0
 Gajendra#Naidoo#ST#0#6.0
 Saien#Naidu#CM#0#6.0

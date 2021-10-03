@@ -1,3 +1,4 @@
+  
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -168,7 +169,7 @@ public class TeamSheetsBoys {
 			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
 				if (!line.equalsIgnoreCase(playerName)) {
-					output += line + "\n";
+					output += line +"\n";
 			 	
 			
 				}
@@ -186,4 +187,45 @@ public class TeamSheetsBoys {
 			System.out.println("Could not delete student");
 		}
         }
+
+      public static void addBoysToStats(String name, String surname,String poistion){
+        try {
+            FileWriter fw = new FileWriter(boyssquadfilepath, true);
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println(name +"#"+ surname+"#"+poistion+"#"+"0"+"#"+"5.0");
+            pw.close();
+        } catch (IOException ex) {
+            System.out.println("File not found");
+            
+        }
+        
+        
+      
+     }
+public static void deleteBoysStats(String name, String surname,String poistion) {
+		try {
+			Scanner sc = new Scanner(new File(boyssquadfilepath));
+			String output = "";
+			String playerName = name +"#"+ surname+"#"+poistion+"#"+"0"+"#"+"5.0";
+
+			while (sc.hasNextLine()) {
+				String line = sc.nextLine();
+				if (!line.equalsIgnoreCase(playerName)) {
+					output += line + "\n";
+				
+			
+				}
+			}
+			sc.close();
+                        
+
+			PrintWriter pw = new PrintWriter(new FileWriter(boyssquadfilepath, false));
+			pw.print(output);
+			pw.close();
+		} catch (FileNotFoundException ex) {
+			System.out.println("Students file not found");
+		} catch (IOException ex) {
+			System.out.println("Could not delete student");
+		}
+	}
 }

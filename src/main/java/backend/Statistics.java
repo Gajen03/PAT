@@ -174,7 +174,7 @@ public class Statistics {
         String output = "";
 
         try {
-            File f = new File(girlssquadfilepath);
+            File f = new File(boyssquadfilepath);
             Scanner fileSc = new Scanner(f);
 
             while (fileSc.hasNext()) {
