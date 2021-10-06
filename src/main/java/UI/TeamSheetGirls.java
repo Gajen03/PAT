@@ -1,6 +1,7 @@
 package UI;
 
 import backend.TeamSheetsGirls;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -108,6 +109,7 @@ public class TeamSheetGirls extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Subs");
 
+        teamsheetsGirlsSubsTextArea.setEditable(false);
         teamsheetsGirlsSubsTextArea.setBackground(new java.awt.Color(0, 0, 102));
         teamsheetsGirlsSubsTextArea.setColumns(20);
         teamsheetsGirlsSubsTextArea.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
@@ -182,6 +184,8 @@ public class TeamSheetGirls extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Player Postion");
 
+        positionField.setBackground(new java.awt.Color(0, 0, 102));
+        positionField.setForeground(new java.awt.Color(255, 255, 255));
         positionField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ST", "RM", "LM", "CM", "CB", "RB", "LB", "GK" }));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -191,22 +195,21 @@ public class TeamSheetGirls extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(surnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(numberField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jLabel11)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                                    .addComponent(positionField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(61, 61, 61))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                            .addComponent(DeleteButton)
-                            .addGap(18, 18, 18)
-                            .addComponent(AddButton)
-                            .addContainerGap()))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(surnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(numberField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                                .addComponent(positionField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(61, 61, 61))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(DeleteButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(AddButton)
+                        .addContainerGap())
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -214,16 +217,12 @@ public class TeamSheetGirls extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel7)
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addContainerGap(279, Short.MAX_VALUE))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addGap(81, 81, 81)
-                                    .addComponent(jLabel8))
-                                .addComponent(jLabel4))
-                            .addContainerGap(83, Short.MAX_VALUE)))))
+                            .addGap(81, 81, 81)
+                            .addComponent(jLabel8))
+                        .addComponent(jLabel4))
+                    .addContainerGap(83, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -350,6 +349,7 @@ public class TeamSheetGirls extends javax.swing.JFrame {
         teamsheetsGirlsTextArea.setText(players);
         String subs = TeamSheetsGirls.getGirlsS();
         teamsheetsGirlsSubsTextArea.setText(subs);
+        JOptionPane.showMessageDialog(null,"Added succefully to team sheet", "",JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_AddButtonActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
@@ -364,6 +364,7 @@ public class TeamSheetGirls extends javax.swing.JFrame {
         teamsheetsGirlsTextArea.setText(players);
         String subs = TeamSheetsGirls.getGirlsS();
         teamsheetsGirlsSubsTextArea.setText(subs);
+        JOptionPane.showMessageDialog(null,"Deleted succefully from team sheet", "",JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     /**

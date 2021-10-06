@@ -174,7 +174,13 @@ public static void deleteGirlsPlayers(String name, String surname,String number,
 			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
 				if (!line.equalsIgnoreCase(playerName)) {
-					output += line +"\n" ;
+                                                                         if(!sc.hasNext()){
+                                                                             output += line;
+                                                                         }else{
+                                                                             output += line+"\n";
+                                                                         }
+					
+					
 			 	
 			
 				}

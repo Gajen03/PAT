@@ -77,7 +77,6 @@ public class AddResults extends javax.swing.JFrame {
         teamPicker = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         CancelBUt = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         Score = new javax.swing.JSpinner();
@@ -103,7 +102,7 @@ public class AddResults extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Gill Sans Nova", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Add Game Fixture");
+        jLabel1.setText("Add Game Result");
 
         jLabel2.setFont(new java.awt.Font("Gill Sans Nova", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,11 +143,6 @@ public class AddResults extends javax.swing.JFrame {
                 CancelBUtActionPerformed(evt);
             }
         });
-
-        jButton2.setBackground(new java.awt.Color(255, 204, 0));
-        jButton2.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Reset");
 
         jButton3.setBackground(new java.awt.Color(255, 204, 0));
         jButton3.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -281,7 +275,7 @@ public class AddResults extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(257, 257, 257)
                                         .addComponent(jLabel1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel3)
@@ -326,9 +320,7 @@ public class AddResults extends javax.swing.JFrame {
                                 .addGap(69, 69, 69))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(CancelBUt)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2)
-                                .addGap(67, 67, 67)))
+                                .addGap(67, 808, Short.MAX_VALUE)))
                         .addComponent(jButton3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
@@ -382,10 +374,9 @@ public class AddResults extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(Player5ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CancelBUt)
-                    .addComponent(jButton2)
                     .addComponent(jButton3))
                 .addContainerGap())
         );
@@ -453,7 +444,8 @@ public class AddResults extends javax.swing.JFrame {
 
         String team = (String) reddamTeamPicker.getActionCommand();
         
-        DefaultComboBoxModel<String> comboModel1 = new DefaultComboBoxModel<String>();
+        if(team.equals("RHBBoys")){
+             DefaultComboBoxModel<String> comboModel1 = new DefaultComboBoxModel<String>();
         DefaultComboBoxModel<String> comboModel2 = new DefaultComboBoxModel<String>();
         DefaultComboBoxModel<String> comboModel3 = new DefaultComboBoxModel<String>();
         DefaultComboBoxModel<String> comboModel4 = new DefaultComboBoxModel<String>();
@@ -478,7 +470,36 @@ public class AddResults extends javax.swing.JFrame {
         Player5ComboBox.setModel(comboModel5);        // TODO add your handling code here:
 
                                          // TODO add your handling code here:
-                                         
+                                       
+        }else{
+              DefaultComboBoxModel<String> comboModel1 = new DefaultComboBoxModel<String>();
+        DefaultComboBoxModel<String> comboModel2 = new DefaultComboBoxModel<String>();
+        DefaultComboBoxModel<String> comboModel3 = new DefaultComboBoxModel<String>();
+        DefaultComboBoxModel<String> comboModel4 = new DefaultComboBoxModel<String>();
+        DefaultComboBoxModel<String> comboModel5 = new DefaultComboBoxModel<String>();
+        comboModel1.addElement("");
+        comboModel2.addElement("");
+        comboModel3.addElement("");
+        comboModel4.addElement("");
+        comboModel5.addElement("");
+        
+        String[] players = TeamSheetsGirls.getGirlsAsArray();
+        for (int i = 0; i < players.length; i++) {
+            comboModel1.addElement(players[i]);
+            comboModel2.addElement(players[i]);
+            comboModel3.addElement(players[i]);
+            comboModel4.addElement(players[i]);
+            comboModel5.addElement(players[i]);
+        }
+        Player1ComboBox.setModel(comboModel1);        // TODO add your handling code here:
+        Player2ComboBox.setModel(comboModel2);        // TODO add your handling code here:
+        Player3ComboBox.setModel(comboModel3);        // TODO add your handling code here:
+        Player4ComboBox.setModel(comboModel4);        // TODO add your handling code here:
+        Player5ComboBox.setModel(comboModel5);        // TODO add your handling code here:
+
+       
+        }
+         
        
     }//GEN-LAST:event_reddamTeamPickerItemStateChanged
 
@@ -589,7 +610,7 @@ public class AddResults extends javax.swing.JFrame {
     int opponentScore = (int)Score.getValue();   
     
     ResultsBackend.addResult("vs", player1Name, player1Surname, player2Name, player2Surname, player3Name, player3Surname, player4Name, player4Surname, player5Name, player5Surname, rhbTeam, otherTeam, reddamScore, opponentScore, Location);
-     
+     JOptionPane.showMessageDialog(null,"Added succefully from results", "",JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -637,7 +658,6 @@ public class AddResults extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Player5ComboBox;
     private javax.swing.JSpinner Score;
     private javax.swing.JSpinner ScoreRHB;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

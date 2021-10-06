@@ -1,6 +1,7 @@
 package UI;
 
 import backend.TeamSheetsBoys;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -115,6 +116,7 @@ public class TeamSheetBoys extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Players                                               Numbers");
 
+        teamsheetsBoysSubsTextArea.setEditable(false);
         teamsheetsBoysSubsTextArea.setBackground(new java.awt.Color(0, 0, 102));
         teamsheetsBoysSubsTextArea.setColumns(20);
         teamsheetsBoysSubsTextArea.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
@@ -189,6 +191,8 @@ public class TeamSheetBoys extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Player Postion");
 
+        positionField.setBackground(new java.awt.Color(0, 0, 102));
+        positionField.setForeground(new java.awt.Color(255, 255, 255));
         positionField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ST", "RM", "LM", "CM", "CB", "RB", "LB", "GK" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -280,7 +284,7 @@ public class TeamSheetBoys extends javax.swing.JFrame {
                         .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
                         .addComponent(jLabel23)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -385,6 +389,7 @@ public class TeamSheetBoys extends javax.swing.JFrame {
         String subs = TeamSheetsBoys.getBoysS();
         teamsheetsBoysSubsTextArea.setText(subs);
       
+        JOptionPane.showMessageDialog(null,"Added succefully to team sheet", "",JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_AddButtonActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
@@ -400,6 +405,8 @@ public class TeamSheetBoys extends javax.swing.JFrame {
         teamsheetsBoysTextArea.setText(players);
         String subs = TeamSheetsBoys.getBoysS();
         teamsheetsBoysSubsTextArea.setText(subs);
+        
+        JOptionPane.showMessageDialog(null,"Delete succefully from team sheet", "",JOptionPane.CLOSED_OPTION);
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     /**

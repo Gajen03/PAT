@@ -25,7 +25,7 @@ public class Results extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
-        String results = ResultsBackend.getResultsB();
+        String results = ResultsBackend.getResults();
         ResultsTextArea.setText(results);
     }
 

@@ -33,7 +33,7 @@ public class ResultsBackend {
 
     }
 
-    public static String getResultsB() {
+    public static String getResults() {
         String output = "";
 
         try {
