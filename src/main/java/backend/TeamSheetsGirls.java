@@ -24,7 +24,7 @@ public class TeamSheetsGirls {
     public static String playerfilepath = "data\\girlTS.txt";
     public static String subfilepath = "data\\subGTS.txt";
     public static String girlssquadfilepath = "data\\statsGirls.txt";
-    //gets all the stating 11 players for the girls squad
+    //gets all the stating 11 players from the girls squad text file
     public static String getGirlsP() {
         String output = "";
 
@@ -53,7 +53,7 @@ public class TeamSheetsGirls {
         }
         return output;
     }
-     //gets all the subs players for the girls squad
+     //gets all the sub players from the girls squad text file
     public static String getGirlsS() {
         String output = "";
 
@@ -126,7 +126,8 @@ public class TeamSheetsGirls {
 			return null;
 		}
 	}
-      // method allows you to add players to the girls squad 
+      // method allows you to get input from the manage students section of the teamsheetsgirls screen 
+    //   and add players to the girls squad ( this includes name,surname,position,number)
     public static void addGirls(String name, String surname,String number,String cap){
         try {
             FileWriter fw = new FileWriter(subfilepath, true);
@@ -138,7 +139,8 @@ public class TeamSheetsGirls {
             
         }
       }
-// method allows you to delete players from the girls squad ( starting 11) 
+// method allows you to delete players from the girls squap using inputs from the manage 
+    //students section of the teamsheetsgirls screen( this includes name,surname,position,number for the stating 11 players)
     public static void deleteGirlsPlayers(String name, String surname,String number,String cap) {
 		try {
 			Scanner sc = new Scanner(new File(playerfilepath));
@@ -165,7 +167,8 @@ public class TeamSheetsGirls {
 			System.out.println("Could not delete student");
 		}
 	}
-// method allows you to delete players from the girls squad ( subs)
+/// method allows you to delete players from the girls squap using inputs from the manage 
+    //students section of the teamsheetsgirls screen( this includes name,surname,position,number for the subs in the girls squad)
     public static void deleteGirlsSubs(String name, String surname,String number,String cap){
             try {
 			Scanner sc = new Scanner(new File(subfilepath));
