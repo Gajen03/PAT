@@ -22,7 +22,7 @@ public class TeamSheetsBoys {
     public static String playerfilepath = "data\\boyTS.txt";
     public static String subfilepath = "data\\subTS.txt";
     public static String boyssquadfilepath = "data\\statsBoys.txt";
-
+//gets all the stating 11 players for the girls squad
      public static String getBoysP() {
         String output = "";
 
@@ -52,6 +52,7 @@ public class TeamSheetsBoys {
         }
         return output;
     }
+    // puts are the girls names and surnames in an array so it can be displayed in a combo box
      private static int getNumBoysP() {
 		try {
 			Scanner sc = new Scanner(new File(boyssquadfilepath));
@@ -68,6 +69,7 @@ public class TeamSheetsBoys {
 			return -1;
 		}
 	}
+       // gets the number of girs so you can use it in an array
      public static String[] getBoysAsArray() {
 		try {
 			Scanner sc = new Scanner(new File(boyssquadfilepath));
@@ -92,6 +94,7 @@ public class TeamSheetsBoys {
 			return null;
 		}
 	}
+      //gets all the subs players for the girls squad
      public static String getBoysS() {
         String output = "";
 
@@ -120,6 +123,7 @@ public class TeamSheetsBoys {
         }
         return output;
     }
+           // method allows you to add players to the girls squad 
      public static void addBoys(String name, String surname,String number,String cap){
         try {
             FileWriter fw = new FileWriter(subfilepath, true);
@@ -134,6 +138,7 @@ public class TeamSheetsBoys {
         
       
      }
+     // method allows you to delete players from the girls squad ( starting 11) 
      public static void deleteBoysP(String name, String surname,String number,String cap) {
 		try {
 			Scanner sc = new Scanner(new File(playerfilepath));
@@ -160,6 +165,7 @@ public class TeamSheetsBoys {
 			System.out.println("Could not delete student");
 		}
 	}
+  // method allows you to delete players from the girls squad ( subs)
      public static void deleteBoysS(String name, String surname,String number,String cap){
             try {
 			Scanner sc = new Scanner(new File(subfilepath));
@@ -187,8 +193,8 @@ public class TeamSheetsBoys {
 			System.out.println("Could not delete student");
 		}
         }
-
-      public static void addBoysToStats(String name, String surname,String poistion){
+ //// method allows you to add stats of players to statsGirls textfile indirectly as it takes infomation from the add players  and add fixture method inpuy  
+    public static void addBoysToStats(String name, String surname,String poistion){
         try {
             FileWriter fw = new FileWriter(boyssquadfilepath, true);
             PrintWriter pw = new PrintWriter(fw);
@@ -202,7 +208,8 @@ public class TeamSheetsBoys {
         
       
      }
-public static void deleteBoysStats(String name, String surname,String poistion) {
+    //// method allows you to delets stats of players from statsGirls textfile indirectly as it takes infomation from the add players  and add fixture method input
+    public static void deleteBoysStats(String name, String surname,String poistion) {
 		try {
 			Scanner sc = new Scanner(new File(boyssquadfilepath));
 			String output = "";

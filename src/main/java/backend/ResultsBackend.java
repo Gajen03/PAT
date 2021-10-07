@@ -19,7 +19,7 @@ import java.util.Scanner;
 public class ResultsBackend {
 
     public static String resultfilepath = "data\\results.txt";
-
+// gets the input from the add results screeen and addes it to the result text file(including..)
     public static void addResult(String vs,String player1Name,String player1Surname,String  player2Name,String player2Surname,String player3Name,String player3Surname,String player4Name, String player4Surname,String  player5Name,String player5Surname, String RHBTeam, String OtherTeam, int RHBScore, int OpponentScore, String location) {
         try {
             FileWriter fw = new FileWriter(resultfilepath, true);

@@ -24,7 +24,7 @@ public class Statistics {
     public static String girlssquadfilepath = "data\\statsGirls.txt";
  
     
-    
+    // gets the boys stats from the text file(including name, surname,postion,goals scored and rating of the player)
     public static String getBoysStats() {
         String output = "";
 
@@ -54,6 +54,7 @@ public class Statistics {
         }
         return output;
     } 
+        // gets the girls stats from the text file(including name, surname,postion,goals scored and rating of the player)
     public static String getGirlsStats() {
         String output = "";
 
@@ -84,6 +85,7 @@ public class Statistics {
         return output;
     } 
    
+    // method added and updates stats to the player bio( including name,surname,position,goals scored and rating of a player) 
    public static void addBoyStats(String nameIn,String surnameIn) {
         String output = "";
 
@@ -122,7 +124,8 @@ public class Statistics {
         }
        
     } 
-    public static void addGirlStats(String nameIn,String surnameIn) {
+       // method added and updates stats to the player bio( including name,surname,position,goals scored and rating of a player)  
+   public static void addGirlStats(String nameIn,String surnameIn) {
         String output = "";
 
         try {

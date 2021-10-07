@@ -24,6 +24,7 @@ public class TeamSheetsGirls {
     public static String playerfilepath = "data\\girlTS.txt";
     public static String subfilepath = "data\\subGTS.txt";
     public static String girlssquadfilepath = "data\\statsGirls.txt";
+    //gets all the stating 11 players for the girls squad
     public static String getGirlsP() {
         String output = "";
 
@@ -52,7 +53,8 @@ public class TeamSheetsGirls {
         }
         return output;
     }
-     public static String getGirlsS() {
+     //gets all the subs players for the girls squad
+    public static String getGirlsS() {
         String output = "";
 
         try {
@@ -83,11 +85,10 @@ public class TeamSheetsGirls {
         }
         return output;
     }
-     private static int getNumGirlsP() 
-     
-    {
+    // gets the number of girs so you can use it in an array
+    private static int getNumGirlsP() {
 		try {
-			Scanner sc = new Scanner(new File(playerfilepath));
+			Scanner sc = new Scanner(new File(girlssquadfilepath));
                                                 sc.useDelimiter("#");
 			int count = 0;
 			while (sc.hasNextLine()) {
@@ -101,9 +102,10 @@ public class TeamSheetsGirls {
 			return -1;
 		}
 	}
-     public static String[] getGirlsAsArray() {
+     // puts are the girls names and surnames in an array so it can be displayed in a combo box
+    public static String[] getGirlsAsArray() {
 		try {
-			Scanner sc = new Scanner(new File(playerfilepath));
+			Scanner sc = new Scanner(new File(girlssquadfilepath));
                                                
 			int numboys = getNumGirlsP();
 			String[] outputArr = new String[numboys];
@@ -124,12 +126,11 @@ public class TeamSheetsGirls {
 			return null;
 		}
 	}
-      public static void addGirls(String name, String surname,String number,String cap){
+      // method allows you to add players to the girls squad 
+    public static void addGirls(String name, String surname,String number,String cap){
         try {
             FileWriter fw = new FileWriter(subfilepath, true);
             PrintWriter pw = new PrintWriter(fw);
-//            name = JOptionPane.showInputDialog("Enter Book Name");
-//            author = JOptionPane.showInputDialog("Enter Book Author");
             pw.print("\n"+name +"#"+ surname+"#"+number+"#"+cap);
             pw.close();
         } catch (IOException ex) {
@@ -137,7 +138,8 @@ public class TeamSheetsGirls {
             
         }
       }
-public static void deleteGirlsPlayers(String name, String surname,String number,String cap) {
+// method allows you to delete players from the girls squad ( starting 11) 
+    public static void deleteGirlsPlayers(String name, String surname,String number,String cap) {
 		try {
 			Scanner sc = new Scanner(new File(playerfilepath));
 			String output = "";
@@ -163,7 +165,8 @@ public static void deleteGirlsPlayers(String name, String surname,String number,
 			System.out.println("Could not delete student");
 		}
 	}
-        public static void deleteGirlsSubs(String name, String surname,String number,String cap){
+// method allows you to delete players from the girls squad ( subs)
+    public static void deleteGirlsSubs(String name, String surname,String number,String cap){
             try {
 			Scanner sc = new Scanner(new File(subfilepath));
 			String output = "";
@@ -199,7 +202,8 @@ public static void deleteGirlsPlayers(String name, String surname,String number,
 			System.out.println("Could not delete student");
 		}
         }
- public static void addGirlsToStats(String name, String surname,String poistion){
+ //// method allows you to add stats of players to statsGirls textfile indirectly as it takes infomation from the add players  and add fixture method input
+    public static void addGirlsToStats(String name, String surname,String poistion){
         try {
             FileWriter fw = new FileWriter(girlssquadfilepath, true);
             PrintWriter pw = new PrintWriter(fw);
@@ -212,6 +216,7 @@ public static void deleteGirlsPlayers(String name, String surname,String number,
 
 
  }
+    //// method allows you to delets stats of players from statsGirls textfile indirectly as it takes infomation from the add players  and add fixture method input
 public static void deleteGirlsStats(String name, String surname,String poistion) {
 		try {
 			Scanner sc = new Scanner(new File(girlssquadfilepath));
