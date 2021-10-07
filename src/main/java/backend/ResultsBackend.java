@@ -32,7 +32,7 @@ public class ResultsBackend {
         }
 
     }
-
+ // gets and displays all game results for all boys and girls games
     public static String getResults() {
         String output = "";
 
