@@ -181,11 +181,12 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterActionPerformed
+        // login system code
         String password = PasswordInput.getText();
         String userName = UserNameInput.getText();
         
        
-        
+        // checks if username and password match
         if(password.contains("1234")&&(userName.contains("Gajen")||userName.contains("Clifton")||userName.contains("JC")||userName.contains("Megan")||userName.contains("Nartia")||userName.contains("Neeraav")||userName.contains("Kyra")||userName.contains("Murray")||userName.contains("Ryan")||userName.contains("Gia")||userName.contains("Karina"))){
             PasswordInput.setText(null);
             UserNameInput.setText(null);
